@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Maker</title>
+    <style>
+        #code {
+            width: 600px;
+            height: 500px;
+            border: 1px grey solid;
+            border-radius: 2px;
+        }
+        pre {
+            border: 1px grey solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Maker</h1>
+
+    <p>Code here:</p>
+    <div id="code"></div>
+    
+    <label for="autodraw">Autodraw:</label>
+    <input type="checkbox" name="autodraw" id="autodraw">
+    <br>
+    <button onclick="draw()">Draw</button>
+    <hr>
+    Image here:
+    <br>
+    <canvas id="img"></canvas>
+    <br>
+    Log:
+    <pre id="log"></pre>
+
+    <script src="monaco/min/vs/loader.js"></script>
+    <script src="editor.js"></script>
+
+    <script src="draw.js"></script>
+
+</body>
+</html>

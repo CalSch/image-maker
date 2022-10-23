@@ -1,0 +1,3 @@
+{
+    "files": ["editor.js","draw.js","monaco/min/vs/loader.js"]
+}
