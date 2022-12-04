@@ -1,5 +1,30 @@
+let autodrawEl=document.getElementById('autodraw');
+let timeEl=document.getElementById('time');
+let autodrawInterval;
+
+function updateAutodraw() {
+    clearInterval(autodrawInterval);
+    if (autodrawEl.checked) autodrawInterval=setInterval(()=>{
+        draw()
+    },timeEl.value*1000)
+}
+
 require.config({ paths: { vs: 'monaco/min/vs' } });
-require(['vs/editor/editor.main'], function () {
+require(['vs/editor/editor.main'], async function () {
+    // compiler options
+    monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
+        target: monaco.languages.typescript.ScriptTarget.ES5,
+        // lib:[],
+        allowNonTsExtensions: true
+    });
+    // Change auto-complete
+    let libSource = await (await fetch('lib.d.ts')).text()
+    let libUri = 'ts:lib.d.ts';
+    monaco.languages.typescript.javascriptDefaults.addExtraLib(libSource, libUri);
+    // When resolving definitions and references, the editor will try to use created models.
+    // Creating a model for the library allows "peek definition/references" commands to work with the library.
+    monaco.editor.createModel(libSource, 'typescript', monaco.Uri.parse(libUri));
+    
     window.editor = monaco.editor.create(document.getElementById('code'), {
         value: 
 `function pix(x,y) {
@@ -8,9 +33,11 @@ require(['vs/editor/editor.main'], function () {
         language: 'javascript',
         theme: 'vs-dark',
     });
-    setInterval(function(){
-        if (document.getElementById('autodraw').checked) {
-            draw();
-        }
-    },1000/2)
+    
+    timeEl.addEventListener('change',()=>{
+        updateAutodraw()
+    })
+    autodrawEl.addEventListener('change',()=>{
+        updateAutodraw()
+    })
 });
