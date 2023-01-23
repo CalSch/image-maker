@@ -16,9 +16,9 @@ async function draw() {
     clear()
     let width=100;
     let height=100;
+    let startTime=Date.now()
 
     // eval(await fetch('img-'))
-
     try {
         eval(editor.getValue());
     } catch(e) {
@@ -42,4 +42,6 @@ async function draw() {
         }
         if (err) break;
     }
+
+    log("end",`Took ${Date.now()-startTime} miliseconds`)
 }

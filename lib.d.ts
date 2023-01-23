@@ -11,6 +11,7 @@ declare class Color {
 
 declare let width:number;
 declare let height:number;
+declare let startTime:number;
 
 declare function pix(x:number, y:number): Color;
 declare function hsl(h:number, s:number, l:number): Color;
