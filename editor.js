@@ -32,6 +32,7 @@ require(['vs/editor/editor.main'], async function () {
 }`,
         language: 'javascript',
         theme: 'vs-dark',
+        automaticLayout: true
     });
     
     timeEl.addEventListener('change',()=>{

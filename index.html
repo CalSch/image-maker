@@ -13,26 +13,30 @@
     </header>
 
     <main>
-        <p>Code here:</p>
-        <div id="code"></div>
+        <div class="layout-code">
+            Code here:
+            <div id="code"></div>
+            
+            <div class="center-v">
+                <label for="autodraw">Autodraw:</label>
+                <input type="checkbox" name="autodraw" id="autodraw">
+            </div>
+            
+            <label for="time">Autodraw speed (seconds between draws): </label>
+            <input type="number" name="time" id="time" min="0" value="0.5" step="0.1">
         
-        <div class="center-v">
-            <label for="autodraw">Autodraw:</label>
-            <input type="checkbox" name="autodraw" id="autodraw">
+            <br>
+            <button onclick="draw()">Draw</button>
         </div>
-        
-        <label for="time">Autodraw speed (seconds between draws): </label>
-        <input type="number" name="time" id="time" min="0" value="0.5" step="0.1">
-    
-        <br>
-        <button onclick="draw()">Draw</button>
-        <hr>
-        Image here:
-        <br>
-        <canvas id="img"></canvas>
-        <br>
-        Log:
-        <pre id="log"></pre>
+        <div class="layout-image">
+            Image here:
+            <br>
+            <canvas id="img"></canvas>
+        </div>
+        <div class="layout-log">
+            Log:
+            <pre id="log"></pre>
+        </div>
     </main>
 
     <footer>

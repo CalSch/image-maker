@@ -5,10 +5,6 @@ html,body {
 	transition: all 0.2s ease;
 }
 
-#code * {
-	transition: all 0.1s ease;
-}
-
 body {
 	margin: 0;
 	margin-bottom: 90px;
@@ -31,6 +27,21 @@ header h1 {
 
 main {
 	padding: 20px;
+	display: grid;
+	grid-template-areas:
+	"code image"
+	"log  log";
+	grid-template-columns: min-content auto;
+	gap: 10px;
+}
+.layout-code {
+	grid-area: code;
+}
+.layout-image {
+	grid-area: image;
+}
+.layout-log {
+	grid-area: log;
 }
 
 footer {
@@ -57,6 +68,9 @@ footer p {
 	height: 500px;
 	border: 1px grey solid;
 	border-radius: 2px;
+	padding: 2px;
+	resize: both !important;
+	overflow: auto;
 }
 pre {
 	border: 1px grey solid;
@@ -71,4 +85,8 @@ input[type='checkbox'] {
 	width: 15px;
 	height: 15px;
 	cursor: pointer;
+}
+
+canvas {
+	border: 1px solid black;
 }
