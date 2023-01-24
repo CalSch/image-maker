@@ -26,7 +26,7 @@ declare function pix(x:number, y:number): Color;
 
 /**
  * Returns a color from HSL values
- * @param h The hue value from 0-360
+ * @param h The hue value from 0-1
  * @param s The saturation value from 0-1
  * @param l The lightness value from 0-1
  */
