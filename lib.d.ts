@@ -13,11 +13,14 @@ declare let width:number;
 declare let height:number;
 declare let startTime:number;
 
-declare const WHITE:Color;
-declare const BLACK:Color;
-declare const RED:Color;
-declare const GREEN:Color;
-declare const BLUE:Color;
+declare const WHITE  :Color;
+declare const BLACK  :Color;
+declare const RED    :Color;
+declare const GREEN  :Color;
+declare const BLUE   :Color;
+declare const CYAN   :Color;
+declare const MAGENTA:Color;
+declare const YELLOW :Color;
 
 declare function pix(x:number, y:number): Color;
 
