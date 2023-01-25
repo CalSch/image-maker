@@ -8,21 +8,27 @@ html,body {
 body {
 	margin: 0;
 	margin-bottom: 90px;
+	margin-top: 100px;
 }
 
 header {
 	box-sizing: border-box;
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	
 	background-color: rgb(92, 79, 232);
+}
+header * {
+	color:white;
+	display: inline-block;
 }
 header h1 {
 	font-size: 36pt;
 	margin: 20px;
-	text-align: center;
-	color: white;
 }
 
 main {
