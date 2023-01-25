@@ -64,8 +64,8 @@ footer p {
 }
 
 #code {
-	width: 600px;
-	height: 500px;
+	width: 30vw;
+	height: 300px;
 	border: 1px grey solid;
 	border-radius: 2px;
 	padding: 2px;
