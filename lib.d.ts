@@ -105,5 +105,6 @@ declare function lerp(a:number,b:number,t:number):number;
  * @param a The starting color
  * @param b The ending color
  * @param t The amount to interpolate
+ * @see lerp
  */
 declare function lerpColor(a:Color,b:Color,t:number):Color;
