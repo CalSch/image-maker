@@ -42,3 +42,23 @@ require(['vs/editor/editor.main'], async function () {
         updateAutodraw()
     })
 });
+
+function save() {
+    let name=prompt("file name:")
+    localStorage.setItem(`file-${name}`,editor.getValue());
+}
+
+function load() {
+    let files=[];
+    for (let i=0;i<localStorage.length;i++) {
+        if (localStorage.key(i).startsWith("file-"))
+            files.push(localStorage.key(i));
+    }
+    let name=prompt(`files are ${files.join(', ')}\nfile name: (excluding "file-")`);
+    if (name) {
+        name=`file-${name}`;
+        if (files.indexOf(name)!==-1) {
+            editor.setValue(localStorage.getItem(name));
+        }
+    }
+}
