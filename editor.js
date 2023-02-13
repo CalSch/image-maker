@@ -105,6 +105,7 @@ function renderTabs() {
 
     let i=0
     for (let tab of tabs) {
+        if (tab.name=="null") continue;
         let el=Emmet(`div.tab${currentTab===i?".active":""}(onclick="tabClick('${tab.name}')") > p{${tab.name}} + div.close(onclick="tabClose('${tab.name}')"){x}`)
         tabsEl.appendChild(el);
         i++;
