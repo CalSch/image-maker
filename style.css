@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
-html,body {
-	font-family: 'Rubik', sans-serif;
-	transition: all 0.2s ease;
+* {
+	box-sizing: border-box;
 }
 
 body {
+	font-family: 'Rubik', sans-serif;
 	margin: 0;
 	margin-bottom: 90px;
 	margin-top: 100px;
@@ -35,19 +35,79 @@ main {
 	padding: 20px;
 	display: grid;
 	grid-template-areas:
+	"tabs tabs"
 	"code image"
 	"log  log";
 	grid-template-columns: min-content auto;
 	gap: 10px;
 }
-.layout-code {
-	grid-area: code;
+.layout-tabs  {grid-area: tabs;}
+.layout-code  {grid-area: code;}
+.layout-image {grid-area: image;}
+.layout-log   {grid-area: log;}
+
+
+.tab {
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	min-width: 130px;
+	height: 40px;
+	background-color: lightgray;
+	padding: 5px;
+	padding-left: 10px;
+	margin: 0 2px;
+	cursor: pointer;
+	border-radius: 10px;
+	border-top: 2px solid rgb(167, 167, 167);
+	/* border-top-left-radius: 10px;
+	border-top-right-radius: 10px; */
 }
-.layout-image {
-	grid-area: image;
+
+.tab:hover {
+	background-color: rgb(189, 192, 204);
 }
-.layout-log {
-	grid-area: log;
+
+.tab.active {
+	background-color: rgb(189, 192, 204);
+	border-top: 3px solid rgb(72, 8, 150);
+}
+
+.tab p {
+	margin: 0;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+.tab .close {
+	color: red;
+	/* display: inline-block; */
+	border-radius: 5px;
+	padding: 5px;
+	margin-left: auto;
+	opacity: 0;
+	height: fit-content;
+}
+.tab .close:hover {
+	background-color: rgba(255, 26, 26, 0.158);
+}
+.tab:hover .close {
+	opacity: 1;
+}
+
+#tabs {
+	display: inline;
+}
+.new {
+	display: inline;
+	cursor: pointer;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.new:hover {
+	background-color: rgb(228, 228, 228);
 }
 
 footer {

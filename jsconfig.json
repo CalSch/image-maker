@@ -5,8 +5,12 @@
             "ES6"
         ]
     },
-    "files": ["editor.js","draw.js","img-lib"],
+    "files": ["editor.js","draw.js","img-lib.js","emmet.js"],
     "include": [
         "monaco"
+    ],
+    "exclude": [
+        "docs/",
+        ".git/",
     ]
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Maker</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="" id="icon">
 </head>
 <body>
     <header>
@@ -14,6 +15,13 @@
     </header>
 
     <main>
+        <div class="layout-tabs">
+            <div id="tabs">
+                Loading...
+            </div>
+
+            <div class="new" onclick="newTab()">+</div>
+        </div>
         <div class="layout-code">
             Code here:
             <div id="code"></div>
@@ -28,8 +36,6 @@
         
             <br>
             <button onclick="draw()">Draw</button>
-            <br>
-            <button onclick="save()">Save</button> <button onclick="load()">Load</button>
         </div>
         <div class="layout-image">
             Image here:
@@ -56,6 +62,7 @@
 
     <script src="img-lib.js"></script>
     <script src="draw.js"></script>
+    <script onload="emmetLoad()" src="emmet.js"></script>
 
 </body>
 </html>

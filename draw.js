@@ -53,4 +53,6 @@ async function draw() {
     ctx.putImageData(imageData,0,0)
 
     log("end",`Took ${Date.now()-startTime} miliseconds`)
+    
+    document.getElementById("icon").href=c.toDataURL();
 }
