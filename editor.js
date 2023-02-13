@@ -131,7 +131,7 @@ function tabClose(name) {
     }
 
     if (tabs.length===0) {
-        
+
     }
 
     renderTabs()
@@ -167,6 +167,15 @@ function emmetLoad() {
 
 function load() {
     tabs=JSON.parse(localStorage.getItem("image-maker-tabs"))||[];
+
+    for (let i=0;i<localStorage.length;i++) {
+        let name=localStorage.key(i)
+        if (name.startsWith("file-")) {
+            tabs.push({name:name.replace("file-",""),code:localStorage.getItem(name)});
+            localStorage.removeItem(name);
+        }
+    }    
+
     tabClick(tabs[0].name)
     renderTabs();
 }
