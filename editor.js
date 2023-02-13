@@ -113,6 +113,7 @@ function renderTabs() {
 
 function newTab() {
     let name=prompt(`Tab name:`);
+    if (name===null) return;
 
     addTab(name,defaultCode);
     renderTabs();
@@ -121,6 +122,9 @@ function newTab() {
 }
 
 function tabClose(name) {
+    let c=confirm(`Are you sure you want to delete ${name}?`)
+    if (!c) return;
+
     let i=0;
     for (let t of tabs) {
         if (t.name===name) {
