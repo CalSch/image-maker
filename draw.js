@@ -32,7 +32,6 @@ async function draw() {
     for (let y=0;y<height;y++) {
         let err=false;
         for (let x=0;x<width;x++) {
-            i+=4;
             let c;
             try {
                 c=new Color(pix(x,y));
@@ -47,6 +46,7 @@ async function draw() {
             imageData.data[i+1]=c.g;
             imageData.data[i+2]=c.b;
             imageData.data[i+3]=255;
+            i+=4;
         }
         if (err) break;
     }
