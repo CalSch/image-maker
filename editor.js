@@ -113,7 +113,10 @@ function renderTabs() {
 
 function newTab() {
     let name=prompt(`Tab name:`);
-    if (name===null) return;
+    if (!name) {
+        alert("cancelled.");
+        return;
+    }
 
     addTab(name,defaultCode);
     renderTabs();
@@ -175,7 +178,8 @@ function load() {
     for (let i=0;i<localStorage.length;i++) {
         let name=localStorage.key(i)
         if (name.startsWith("file-")) {
-            tabs.push({name:name.replace("file-",""),code:localStorage.getItem(name)});
+            if (name!=="file-null")
+                tabs.push({name:name.replace("file-",""),code:localStorage.getItem(name)});
             localStorage.removeItem(name);
         }
     }    
