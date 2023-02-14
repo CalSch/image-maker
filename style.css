@@ -83,7 +83,6 @@ main {
 .tab :is(.close,.edit) {
 	display: flex;
 	align-content: center;
-	color: red;
 	/* display: inline-block; */
 	border-radius: 5px;
 	padding: 5px;
@@ -101,7 +100,7 @@ main {
 	margin-left: auto;
 }
 .tab .edit:hover {
-	background-color: rgba(26, 133, 255, 0.158);
+	background-color: rgba(20, 121, 235, 0.238);
 }
 
 #tabs {

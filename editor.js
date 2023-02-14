@@ -106,7 +106,7 @@ function renderTabs() {
     let i=0
     for (let tab of tabs) {
         if (tab.name=="null") continue;
-        let el=Emmet(`div.tab${currentTab===i?".active":""}(onclick="tabClick('${tab.name}')") > p{${tab.name}} + div.edit(onclick="renameTab('${tab.name}')")>box-icon(name="edit",color="#3b77ea",size="18px") ^ div.close(onclick="tabClose('${tab.name}')")>box-icon(name="x",color="#dd0000",size="18px")`)
+        let el=Emmet(`div.tab${currentTab===i?".active":""}(onclick="tabClick('${tab.name}')") > p{${tab.name}} + div.edit(title="Rename Tab",onclick="renameTab('${tab.name}')")>box-icon(name="edit",color="#3b77fa",size="18px") ^ div.close(title="Delete Tab", onclick="tabClose('${tab.name}')")>box-icon(name="x",color="#dd0000",size="18px")`)
         tabsEl.appendChild(el);
         i++;
     }
