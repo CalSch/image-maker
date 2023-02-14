@@ -80,20 +80,28 @@ main {
 	-moz-user-select: none;
 }
 
-.tab .close {
+.tab :is(.close,.edit) {
+	display: flex;
+	align-content: center;
 	color: red;
 	/* display: inline-block; */
 	border-radius: 5px;
 	padding: 5px;
-	margin-left: auto;
 	opacity: 0;
 	height: fit-content;
 }
 .tab .close:hover {
 	background-color: rgba(255, 26, 26, 0.158);
 }
-.tab:hover .close {
+.tab:hover :is(.close,.edit) {
 	opacity: 1;
+}
+
+.tab .edit {
+	margin-left: auto;
+}
+.tab .edit:hover {
+	background-color: rgba(26, 133, 255, 0.158);
 }
 
 #tabs {

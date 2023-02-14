@@ -106,7 +106,7 @@ function renderTabs() {
     let i=0
     for (let tab of tabs) {
         if (tab.name=="null") continue;
-        let el=Emmet(`div.tab${currentTab===i?".active":""}(onclick="tabClick('${tab.name}')") > p{${tab.name}} + div.close(onclick="tabClose('${tab.name}')"){x}`)
+        let el=Emmet(`div.tab${currentTab===i?".active":""}(onclick="tabClick('${tab.name}')") > p{${tab.name}} + div.edit(onclick="renameTab('${tab.name}')")>box-icon(name="edit",color="#3b77ea",size="18px") ^ div.close(onclick="tabClose('${tab.name}')")>box-icon(name="x",color="#dd0000",size="18px")`)
         tabsEl.appendChild(el);
         i++;
     }
@@ -139,11 +139,29 @@ function tabClose(name) {
     }
 
     if (tabs.length===0) {
-
+        addTab("Tab",defaultCode)
     }
 
     renderTabs()
     tabClick(tabs[Math.min(currentTab,tabs.length-1)].name)
+    save();
+}
+
+function renameTab(name) {
+    let newName=prompt("New name:");
+    if (!newName) {
+        alert("Cancelled");
+        return;
+    }
+    let i=0;
+    for (let t of tabs) {
+        if (t.name==name) {
+            tabs[i].name=newName
+        }
+        i++;
+    }
+
+    renderTabs();
     save();
 }
 
