@@ -4,7 +4,6 @@
   - Greyscale
   - hsl getters and setters
 - Gradient function with multiple stops
-- Fix footer position
 - Smart update
   - Draw after some amount of idle time
 - Templates / Examples / Tutorials
@@ -13,3 +12,4 @@
   - How to use lerpColor
 
 === DONE ===
+- Fix footer position
