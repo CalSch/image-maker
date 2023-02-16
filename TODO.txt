@@ -1,0 +1,15 @@
+=== TODO ===
+- More functions for Colors
+  - Math (add, multiply, etc.)
+  - Greyscale
+  - hsl getters and setters
+- Gradient function with multiple stops
+- Fix footer position
+- Smart update
+  - Draw after some amount of idle time
+- Templates / Examples / Tutorials
+  - Starter tutorial
+  - Voronoi template
+  - How to use lerpColor
+
+=== DONE ===
