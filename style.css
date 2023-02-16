@@ -7,8 +7,12 @@
 body {
 	font-family: 'Rubik', sans-serif;
 	margin: 0;
-	margin-bottom: 90px;
-	margin-top: 100px;
+	/* margin-bottom: 90px; */
+	padding-top: 100px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	/* background-color:red; */
 }
 
 header {
@@ -38,8 +42,15 @@ main {
 	"tabs tabs"
 	"code image"
 	"log  log";
-	grid-template-columns: min-content auto;
+	grid-template-columns: min-content 1fr;
+	grid-template-rows: repeat(3,min-content);
 	gap: 10px;
+
+	height: fit-content;
+
+	flex-grow: 1;
+
+	/* background-color: orange; */
 }
 .layout-tabs  {grid-area: tabs;}
 .layout-code  {grid-area: code;}
@@ -118,8 +129,6 @@ main {
 }
 
 footer {
-	/* position: fixed;
-	bottom: 0px; */
 	box-sizing: border-box;
 	display: flex;
 
