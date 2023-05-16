@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An online JavaScript image maker / generator">
     <title>Image Maker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="" id="icon">
@@ -17,9 +18,15 @@
     </header>
 
     <main>
+        <noscript>
+            <div style="margin: 10px; border: 1px solid red; border-radius: 5px; background-color: rgba(255,0,0,0.1); padding: 10px">
+                <h1>Warning!</h1>
+                <p>This website doesn't work without JavaScript!</p>
+            </div>
+        </noscript>
         <div class="layout-tabs">
             <div id="tabs">
-                Loading...
+                Loading... (If this stays for more than 30 seconds: press the + button, give the tab a name, and reload)
             </div>
 
             <div class="new" onclick="newTab()">+</div>
