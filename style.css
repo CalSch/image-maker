@@ -116,6 +116,7 @@ main {
 
 #tabs {
 	display: inline;
+	overflow-x: scroll;
 }
 .new {
 	display: inline;
@@ -134,7 +135,7 @@ footer {
 
 	align-items: center;
 	width: 100%;
-	height: 80px;
+	height: 90px;
 	padding: 10px;
 
 	background-color: lightgray;
@@ -156,6 +157,8 @@ footer p {
 }
 pre {
 	border: 1px grey solid;
+	padding: 5px;
+	border-radius: 5px;
 }
 
 .center-v {
